@@ -34,7 +34,7 @@ public class EventsActivity extends TabActivity {
 
     private void setupUpcomingTab(TabHost host) {
         Intent intent = new Intent(this, UpcomingEventsTab.class);
-        TabHost.TabSpec upcomingTab = host.newTabSpec("upcoming")
+        TabHost.TabSpec upcomingTab = host.newTabSpec(TAG_UPCOMING)
                 .setIndicator(buildIndicator(R.string.title_upcoming_events_tab))
                 .setContent(intent);
         host.addTab(upcomingTab);
@@ -42,7 +42,7 @@ public class EventsActivity extends TabActivity {
 
     private void setupPastTab(TabHost host) {
         Intent intent = new Intent(this, PastEventsTab.class);
-        TabHost.TabSpec pastTab = host.newTabSpec("past")
+        TabHost.TabSpec pastTab = host.newTabSpec(TAG_PAST)
                 .setIndicator(buildIndicator(R.string.title_past_events_tab))
                 .setContent(intent);
         host.addTab(pastTab);

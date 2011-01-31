@@ -24,7 +24,6 @@ public class PastEventsTab extends ListActivity {
     private Runnable viewEvents;
 
     private ListView eventsListView;
-    //private CursorAdapter mAdapter;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -47,11 +46,6 @@ public class PastEventsTab extends ListActivity {
         thread.start();
         m_ProgressDialog = ProgressDialog.show(PastEventsTab.this,
                 "Please wait...", "Retrieving data ...", true);
-
-/*
-        mAdapter = new EventsAdapter(this);
-        setListAdapter(mAdapter);
-*/
 
     }
 
@@ -88,23 +82,5 @@ public class PastEventsTab extends ListActivity {
             m_adapter.notifyDataSetChanged();
         }
     };
-
-    /*private class EventsAdapter extends CursorAdapter {
-        public EventsAdapter(final Context context) {
-            super(context,null);
-        }
-
-        @Override
-        public View newView(final Context context, final Cursor cursor, final ViewGroup viewGroup) {
-            return getLayoutInflater().inflate(R.layout.list_item_event, viewGroup, false);
-        }
-
-        @Override
-        public void bindView(final View view, final Context context, final Cursor cursor) {
-            final TextView titleView = (TextView) view.findViewById(R.id.event_title);
-            titleView.setText("test");
-        }
-    }*/
-
 
 }
