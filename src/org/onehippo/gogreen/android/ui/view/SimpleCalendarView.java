@@ -26,8 +26,8 @@ public class SimpleCalendarView extends FrameLayout {
         super(context);
     }
 
-    public SimpleCalendarView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+    public SimpleCalendarView(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
 
         setUpImageView(context);
         setUpDayView(context);
