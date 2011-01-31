@@ -39,6 +39,10 @@ public class SimpleCalendarView extends FrameLayout {
         this.addView(this.calendarDayTextView);
     }
 
+    /**
+     * Setup the month {@link TextView}
+     * @param context the {@link Context}
+     */
     private void setUpMonthView(final Context context) {
         this.calendarMonthTextView = new TextView(context);
         this.calendarMonthTextView.setText("");
@@ -49,6 +53,10 @@ public class SimpleCalendarView extends FrameLayout {
         this.calendarMonthTextView.setGravity(Gravity.CENTER_HORIZONTAL);
     }
 
+    /**
+     * Setup the day {@link TextView}
+     * @param context the {@link Context}
+     */
     private void setUpDayView(final Context context) {
         this.calendarDayTextView = new TextView(context);
         this.calendarDayTextView.setText("");
@@ -59,16 +67,28 @@ public class SimpleCalendarView extends FrameLayout {
         this.calendarDayTextView.setGravity(Gravity.CENTER_HORIZONTAL);
     }
 
+    /**
+     * Sets up the empty calendar view
+     * @param context the {@link Context}
+     */
     private void setUpImageView(final Context context) {
         calendarImageView = new ImageView(context);
         calendarImageView.setImageResource(R.drawable.bg_calendar);
         calendarImageView.setScaleType(ImageView.ScaleType.FIT_XY);
     }
 
+    /**
+     * Sets the day of the calendar view
+     * @param day the day to show on the calendar
+     */
     public void setDate(final int day) {
         this.calendarDayTextView.setText(Integer.toString(day));
     }
 
+    /**
+     * Sets the month on the calendar view
+     * @param month the month to show on the calendar
+     */
     public void setMonth(final String month) {
         this.calendarMonthTextView.setText(month);
     }
