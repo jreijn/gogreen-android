@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<events>
+
+    <!-- NOTE: these are static events -->
+
+    <event>
+        <start>2010-05-19T12:00:00.000-07:00</start>
+        <end>2010-05-19T14:30:00.000-07:00</end>
+        <title>Dummy event 1</title>
+    </event>
+
+    <event>
+        <start>2010-05-19T12:00:00.000-07:00</start>
+        <end>2010-05-19T14:30:00.000-07:00</end>
+        <title>Dummy event 2</title>
+    </event>
+
+</events>

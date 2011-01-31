@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.onehippo.gogreen.android"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+
+        <activity
+            android:name=".ui.HomeActivity"
+            android:theme="@style/Theme.GoGreen"
+            android:label="@string/app_name"
+            android:icon="@drawable/hippo_logo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.EventsActivity"
+            android:theme="@style/Theme.GoGreen"
+            android:label="@string/title_events" />
+
+        <activity
+          android:name=".ui.UpcomingEventsTab"
+          android:theme="@style/Theme.GoGreen"
+          android:label="@string/title_upcoming_events_tab"/>
+
+      <activity
+        android:name=".ui.PastEventsTab"
+        android:theme="@style/Theme.GoGreen"
+        android:label="@string/title_past_events_tab"/>
+
+    </application>
+</manifest> 

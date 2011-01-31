@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_item_event"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    style="@style/ListItem">
+
+    <org.onehippo.gogreen.android.ui.view.SimpleCalendarView
+        android:id="@+id/calendar_today"
+        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal|top"
+        android:src="@drawable/calendar"
+        />
+
+    <TextView
+        android:gravity="left"
+        android:id="@+id/event_title"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/calendar_today"
+        style="@style/EventTitle" />
+</RelativeLayout>
