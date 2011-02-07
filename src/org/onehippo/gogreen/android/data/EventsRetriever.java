@@ -1,7 +1,6 @@
 package org.onehippo.gogreen.android.data;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import org.onehippo.gogreen.android.Event;
@@ -16,21 +15,6 @@ import org.springframework.web.client.RestTemplate;
 public class EventsRetriever {
 
     private static final String BASE_URI_RESTAPI = "http://10.0.2.2:8085/site/restapi";
-
-    public static ArrayList<Event> getAllEvents() {
-        ArrayList<Event> events = new ArrayList<Event>();
-        Calendar cal = Calendar.getInstance();
-        Event e1 = new Event();
-        e1.setStartDate(cal);
-        e1.setTitle("Guelph Organic Conference");
-        Event e2 = new Event();
-        cal.add(Calendar.MONTH, -2);
-        e2.setStartDate(cal);
-        e2.setTitle("Ecobuild 2011");
-        events.add(e1);
-        events.add(e2);
-        return events;
-    }
 
     /**
      * Get the upcoming events.
