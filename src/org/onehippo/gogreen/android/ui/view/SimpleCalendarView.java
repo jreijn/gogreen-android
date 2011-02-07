@@ -34,9 +34,9 @@ public class SimpleCalendarView extends FrameLayout {
         setUpMonthView(context);
 
         /* Add child views to this object. */
-        this.addView(this.calendarImageView);
-        this.addView(this.calendarMonthTextView);
-        this.addView(this.calendarDayTextView);
+        addView(calendarImageView);
+        addView(calendarMonthTextView);
+        addView(calendarDayTextView);
     }
 
     /**
@@ -44,13 +44,12 @@ public class SimpleCalendarView extends FrameLayout {
      * @param context the {@link Context}
      */
     private void setUpMonthView(final Context context) {
-        this.calendarMonthTextView = new TextView(context);
-        this.calendarMonthTextView.setText("");
-        this.calendarMonthTextView.setTextSize(7);
-        this.calendarMonthTextView.setTypeface(Typeface.create("Tahoma", Typeface.BOLD));
-        this.calendarMonthTextView.setPadding(0, 4, 0, 0);
-        this.calendarMonthTextView.setTextColor(Color.WHITE);
-        this.calendarMonthTextView.setGravity(Gravity.CENTER_HORIZONTAL);
+        calendarMonthTextView = new TextView(context);
+        calendarMonthTextView.setTextSize(7);
+        calendarMonthTextView.setTypeface(Typeface.create("Tahoma", Typeface.BOLD));
+        calendarMonthTextView.setPadding(0, 4, 0, 0);
+        calendarMonthTextView.setTextColor(Color.WHITE);
+        calendarMonthTextView.setGravity(Gravity.CENTER_HORIZONTAL);
     }
 
     /**
@@ -58,13 +57,12 @@ public class SimpleCalendarView extends FrameLayout {
      * @param context the {@link Context}
      */
     private void setUpDayView(final Context context) {
-        this.calendarDayTextView = new TextView(context);
-        this.calendarDayTextView.setText("");
-        this.calendarDayTextView.setTextSize(12);
-        this.calendarDayTextView.setTypeface(Typeface.create("Tahoma", Typeface.BOLD));
-        this.calendarDayTextView.setPadding(0, 13, 0, 0);
-        this.calendarDayTextView.setTextColor(Color.WHITE);
-        this.calendarDayTextView.setGravity(Gravity.CENTER_HORIZONTAL);
+        calendarDayTextView = new TextView(context);
+        calendarDayTextView.setTextSize(10);
+        calendarDayTextView.setTypeface(Typeface.create("Tahoma", Typeface.BOLD));
+        calendarDayTextView.setPadding(0, 13, 0, 0);
+        calendarDayTextView.setTextColor(Color.WHITE);
+        calendarDayTextView.setGravity(Gravity.CENTER_HORIZONTAL);
     }
 
     /**

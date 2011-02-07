@@ -1,41 +1,41 @@
 package org.onehippo.gogreen.android.ui;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import org.onehippo.gogreen.android.Event;
 import org.onehippo.gogreen.android.R;
 import org.onehippo.gogreen.android.adapter.EventAdapter;
+import org.onehippo.gogreen.android.data.EventsRetriever;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 /**
+ * Tab for showing past events
+ *
  * @author Jeroen Reijn
  */
 public class PastEventsTab extends ListActivity {
 
-    private ProgressDialog m_ProgressDialog = null;
-    private ArrayList<Event> m_events = null;
-    private EventAdapter m_adapter;
-    private Runnable viewEvents;
-
-    private ListView eventsListView;
+    private ProgressDialog progressDialog = null;
+    private ArrayList<Event> events;
+    private EventAdapter eventAdapter;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events_content);
-        eventsListView = getListView();
 
-        m_events = new ArrayList<Event>();
-        m_adapter = new EventAdapter(this, R.layout.list_item_event, m_events);
-        setListAdapter(m_adapter);
+        events = new ArrayList<Event>();
+        eventAdapter = new EventAdapter(this, R.layout.list_item_event, events);
+        setListAdapter(eventAdapter);
 
-        viewEvents = new Runnable() {
+        final Runnable viewEvents = new Runnable() {
 
             public void run() {
                 getEvents();
@@ -44,25 +44,21 @@ public class PastEventsTab extends ListActivity {
 
         Thread thread = new Thread(null, viewEvents, "MagentoBackground");
         thread.start();
-        m_ProgressDialog = ProgressDialog.show(PastEventsTab.this,
+        progressDialog = ProgressDialog.show(PastEventsTab.this,
                 "Please wait...", "Retrieving data ...", true);
 
     }
 
+
+    @Override
+    protected void onListItemClick(final ListView l, final View v, final int position, final long id) {
+        startActivity(new Intent(this,EventDetailActivity.class));
+    }
+
     private void getEvents() {
         try {
-            Calendar cal = Calendar.getInstance();
-            m_events = new ArrayList<Event>();
-            Event e1 = new Event();
-            e1.setDate(cal.getTime());
-            e1.setTitle("Guelph Organic Conference");
-            Event e2 = new Event();
-            cal.add(Calendar.MONTH, -2);
-            e2.setDate(cal.getTime());
-            e2.setTitle("Ecobuild 2011");
-            m_events.add(e1);
-            m_events.add(e2);
-            Log.i("ARRAY", "" + m_events.size());
+            events = EventsRetriever.getPastEvents();
+            Log.i("ARRAY", "" + events.size());
         } catch (Exception e) {
             Log.e("BACKGROUND_PROC", e.getMessage());
         }
@@ -72,14 +68,14 @@ public class PastEventsTab extends ListActivity {
     private Runnable returnRes = new Runnable() {
 
         public void run() {
-            if (m_events != null && m_events.size() > 0) {
-                m_adapter.notifyDataSetChanged();
-                for (int i = 0; i < m_events.size(); i++) {
-                    m_adapter.add(m_events.get(i));
+            if (events != null && events.size() > 0) {
+                eventAdapter.notifyDataSetChanged();
+                for (Event event : events) {
+                    eventAdapter.add(event);
                 }
             }
-            m_ProgressDialog.dismiss();
-            m_adapter.notifyDataSetChanged();
+            progressDialog.dismiss();
+            eventAdapter.notifyDataSetChanged();
         }
     };
 

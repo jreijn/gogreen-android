@@ -22,6 +22,11 @@
       android:label="@string/title_events"/>
 
     <activity
+      android:name=".ui.EventDetailActivity"
+      android:theme="@style/Theme.GoGreen"
+      android:label="@string/title_events"/>
+
+    <activity
       android:name=".ui.UpcomingEventsTab"
       android:theme="@style/Theme.GoGreen"
       android:label="@string/title_upcoming_events_tab"/>
@@ -30,6 +35,11 @@
       android:name=".ui.PastEventsTab"
       android:theme="@style/Theme.GoGreen"
       android:label="@string/title_past_events_tab"/>
+    <activity android:name=".ui.EventDetailActivity"/>
+
 
   </application>
+
+  <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest> 

@@ -1,11 +1,13 @@
 package org.onehippo.gogreen.android.ui;
 
+import java.util.ArrayList;
+
+import org.onehippo.gogreen.android.Event;
 import org.onehippo.gogreen.android.R;
+import org.onehippo.gogreen.android.adapter.EventAdapter;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 /**
  * Tab container for showing upcoming events.
@@ -14,15 +16,16 @@ import android.widget.ListView;
  */
 public class UpcomingEventsTab extends ListActivity {
 
-    private String lv_arr[] = {"Nokia", "Siemens", "Motorola"};
-
-    private ListView eventsListView;
+    private ArrayList<Event> events;
+    private EventAdapter eventAdapter;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events_content);
-        eventsListView = getListView();
-        eventsListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lv_arr));
+
+        events = new ArrayList<Event>();
+        eventAdapter = new EventAdapter(this, R.layout.list_item_event, events);
+        setListAdapter(eventAdapter);
     }
 }

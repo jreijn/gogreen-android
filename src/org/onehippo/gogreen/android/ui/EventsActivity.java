@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 /**
  * Activity for the events screen
+ * 
  * @author Jeroen Reijn
  */
 public class EventsActivity extends TabActivity {

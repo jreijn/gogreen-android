@@ -145,11 +145,12 @@ public final class R {
         public static final int title_text=0x7f070002;
     }
     public static final class layout {
-        public static final int activity_events=0x7f030000;
-        public static final int activity_events_content=0x7f030001;
-        public static final int activity_home=0x7f030002;
-        public static final int list_item_event=0x7f030003;
-        public static final int tab_indicator=0x7f030004;
+        public static final int activity_event_detail=0x7f030000;
+        public static final int activity_events=0x7f030001;
+        public static final int activity_events_content=0x7f030002;
+        public static final int activity_home=0x7f030003;
+        public static final int list_item_event=0x7f030004;
+        public static final int tab_indicator=0x7f030005;
     }
     public static final class plurals {
         public static final int now_playing_countdown=0x7f090000;
