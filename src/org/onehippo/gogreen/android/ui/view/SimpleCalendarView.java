@@ -40,16 +40,13 @@ public class SimpleCalendarView extends FrameLayout {
     }
 
     /**
-     * Setup the month {@link TextView}
+     * Sets up the empty calendar view
      * @param context the {@link Context}
      */
-    private void setUpMonthView(final Context context) {
-        calendarMonthTextView = new TextView(context);
-        calendarMonthTextView.setTextSize(7);
-        calendarMonthTextView.setTypeface(Typeface.create("Tahoma", Typeface.BOLD));
-        calendarMonthTextView.setPadding(0, 4, 0, 0);
-        calendarMonthTextView.setTextColor(Color.WHITE);
-        calendarMonthTextView.setGravity(Gravity.CENTER_HORIZONTAL);
+    private void setUpImageView(final Context context) {
+        calendarImageView = new ImageView(context);
+        calendarImageView.setImageResource(R.drawable.bg_calendar);
+        calendarImageView.setScaleType(ImageView.ScaleType.FIT_XY);
     }
 
     /**
@@ -59,20 +56,23 @@ public class SimpleCalendarView extends FrameLayout {
     private void setUpDayView(final Context context) {
         calendarDayTextView = new TextView(context);
         calendarDayTextView.setTextSize(10);
-        calendarDayTextView.setTypeface(Typeface.create("Tahoma", Typeface.BOLD));
-        calendarDayTextView.setPadding(0, 13, 0, 0);
+        calendarDayTextView.setTypeface(Typeface.DEFAULT_BOLD);
+        calendarDayTextView.setPadding(0, 14, 0, 0);
         calendarDayTextView.setTextColor(Color.WHITE);
         calendarDayTextView.setGravity(Gravity.CENTER_HORIZONTAL);
     }
 
     /**
-     * Sets up the empty calendar view
+     * Setup the month {@link TextView}
      * @param context the {@link Context}
      */
-    private void setUpImageView(final Context context) {
-        calendarImageView = new ImageView(context);
-        calendarImageView.setImageResource(R.drawable.bg_calendar);
-        calendarImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+    private void setUpMonthView(final Context context) {
+        calendarMonthTextView = new TextView(context);
+        calendarMonthTextView.setTextSize(7);
+        calendarMonthTextView.setTypeface(Typeface.DEFAULT_BOLD);
+        calendarMonthTextView.setPadding(0, 4, 0, 0);
+        calendarMonthTextView.setTextColor(Color.WHITE);
+        calendarMonthTextView.setGravity(Gravity.CENTER_HORIZONTAL);
     }
 
     /**

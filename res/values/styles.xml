@@ -81,8 +81,9 @@
     <style name="EventTitle">
         <item name="android:paddingLeft">3dip</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:textColor">@android:color/primary_text_light</item>
+        <item name="android:layout_centerVertical">true</item>
     </style>
 
     <style name="NoteCreate">

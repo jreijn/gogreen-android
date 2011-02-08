@@ -12,7 +12,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:gravity="center_horizontal|top"
-        android:src="@drawable/calendar"
         />
 
     <TextView
