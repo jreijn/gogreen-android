@@ -42,4 +42,12 @@ public class HomeActivity extends Activity {
         startActivity(new Intent(this, EventsActivity.class));
     }
 
+    /**
+     * Handle "products" action.
+     */
+    public void onProductsClick(View v) {
+        // Launch events view
+        startActivity(new Intent(this, ProductsActivity.class));
+    }
+
 }

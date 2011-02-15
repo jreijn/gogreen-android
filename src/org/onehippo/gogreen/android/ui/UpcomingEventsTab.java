@@ -2,9 +2,9 @@ package org.onehippo.gogreen.android.ui;
 
 import java.util.ArrayList;
 
-import org.onehippo.gogreen.android.Event;
 import org.onehippo.gogreen.android.R;
 import org.onehippo.gogreen.android.adapter.EventAdapter;
+import org.onehippo.gogreen.android.data.Event;
 
 import android.app.ListActivity;
 import android.os.Bundle;

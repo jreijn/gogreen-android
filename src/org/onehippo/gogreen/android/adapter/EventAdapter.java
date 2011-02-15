@@ -4,8 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import org.onehippo.gogreen.android.Event;
 import org.onehippo.gogreen.android.R;
+import org.onehippo.gogreen.android.data.Event;
 import org.onehippo.gogreen.android.ui.view.SimpleCalendarView;
 
 import android.content.Context;

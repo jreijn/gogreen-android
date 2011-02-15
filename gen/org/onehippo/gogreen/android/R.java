@@ -131,15 +131,18 @@ public final class R {
     public static final class id {
         public static final int blocks_now=0x7f070007;
         public static final int blocks_ruler=0x7f070006;
-        public static final int calendar_today=0x7f07000b;
+        public static final int calendar_today=0x7f07000c;
         public static final int dialog_discard_confirm=0x7f070003;
         public static final int dialog_moderator=0x7f070004;
         public static final int dialog_wave=0x7f070005;
-        public static final int event_title=0x7f07000c;
+        public static final int event_title=0x7f07000d;
         public static final int home_btn_events=0x7f070009;
+        public static final int home_btn_products=0x7f07000a;
         public static final int home_root=0x7f070008;
-        public static final int list_item_event=0x7f07000a;
-        public static final int tab_label=0x7f07000d;
+        public static final int list_item_event=0x7f07000b;
+        public static final int list_item_product=0x7f07000e;
+        public static final int product_title=0x7f07000f;
+        public static final int tab_label=0x7f070010;
         public static final int title_container=0x7f070000;
         public static final int title_logo=0x7f070001;
         public static final int title_text=0x7f070002;
@@ -149,8 +152,11 @@ public final class R {
         public static final int activity_events=0x7f030001;
         public static final int activity_events_content=0x7f030002;
         public static final int activity_home=0x7f030003;
-        public static final int list_item_event=0x7f030004;
-        public static final int tab_indicator=0x7f030005;
+        public static final int activity_topproducts=0x7f030004;
+        public static final int header=0x7f030005;
+        public static final int list_item_event=0x7f030006;
+        public static final int list_item_product=0x7f030007;
+        public static final int tab_indicator=0x7f030008;
     }
     public static final class plurals {
         public static final int now_playing_countdown=0x7f090000;

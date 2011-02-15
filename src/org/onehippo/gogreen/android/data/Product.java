@@ -1,25 +1,17 @@
-package org.onehippo.gogreen.android;
-
-import java.util.Calendar;
+package org.onehippo.gogreen.android.data;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
- * Simple representation of an event.
+ * Simple representation of a product.
  * @author Jeroen Reijn
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Event {
+public class Product {
 
     @JsonProperty
     private String title;
-
-    @JsonProperty
-    private Calendar startDate;
-
-    @JsonProperty
-    private Calendar endDate;
 
     @JsonProperty
     private String localizedName;
@@ -30,22 +22,6 @@ public class Event {
 
     public void setTitle(final String title) {
         this.title = title;
-    }
-
-    public Calendar getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(final Calendar startDate) {
-        this.startDate = startDate;
-    }
-
-    public Calendar getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(final Calendar endDate) {
-        this.endDate = endDate;
     }
 
     public String getLocalizedName() {

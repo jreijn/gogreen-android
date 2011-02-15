@@ -2,10 +2,10 @@ package org.onehippo.gogreen.android.ui;
 
 import java.util.ArrayList;
 
-import org.onehippo.gogreen.android.Event;
 import org.onehippo.gogreen.android.R;
 import org.onehippo.gogreen.android.adapter.EventAdapter;
-import org.onehippo.gogreen.android.data.EventsRetriever;
+import org.onehippo.gogreen.android.data.Event;
+import org.onehippo.gogreen.android.service.EventService;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -57,7 +57,7 @@ public class PastEventsTab extends ListActivity {
 
     private void getEvents() {
         try {
-            events = EventsRetriever.getPastEvents();
+            events = EventService.getPastEvents();
             Log.i("ARRAY", "" + events.size());
         } catch (Exception e) {
             Log.e("BACKGROUND_PROC", e.getMessage());

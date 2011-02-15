@@ -13,5 +13,4 @@
         android:text="@string/empty_events"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
 </FrameLayout>

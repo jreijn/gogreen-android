@@ -1,9 +1,9 @@
-package org.onehippo.gogreen.android.data;
+package org.onehippo.gogreen.android.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.onehippo.gogreen.android.Event;
+import org.onehippo.gogreen.android.data.Event;
 import org.springframework.http.client.CommonsClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
@@ -12,19 +12,20 @@ import org.springframework.web.client.RestTemplate;
 /**
  * @author Jeroen Reijn
  */
-public class EventsRetriever {
+public class EventService {
 
-    private static final String BASE_URI_RESTAPI = "http://10.0.2.2:8085/site/restapi";
+    private static final String RESTAPI_BASE_URI = "http://10.0.2.2:8085/site/restapi";
+    private static final String RESTAPI_RESPONSE_TYPE = "_type=json";
 
     /**
      * Get the upcoming events.
      *
-     * @return a list of {@link Event} items
+     * @return a list of {@link org.onehippo.gogreen.android.data.Event} items
      */
     public static ArrayList<Event> getUpcomingEvents() {
         RestTemplate restTemplate = getRestTemplate();
         ArrayList<Event> events = new ArrayList<Event>();
-        String url = BASE_URI_RESTAPI + "/events./?_type=json";
+        String url = RESTAPI_BASE_URI + "/events./?" + RESTAPI_RESPONSE_TYPE;
 
         Event[] eventsFromHippo = restTemplate.getForObject(url, Event[].class);
 
@@ -43,7 +44,7 @@ public class EventsRetriever {
     public static ArrayList<Event> getPastEvents() {
         RestTemplate restTemplate = getRestTemplate();
         ArrayList<Event> events = new ArrayList<Event>();
-        String url = BASE_URI_RESTAPI + "/events./?_type=json";
+        String url = RESTAPI_BASE_URI + "/events./?" + RESTAPI_RESPONSE_TYPE;
 
         Event[] eventsFromHippo = restTemplate.getForObject(url, Event[].class);
 
@@ -64,7 +65,7 @@ public class EventsRetriever {
         RestTemplate restTemplate = getRestTemplate();
 
         ArrayList<Event> events = new ArrayList<Event>();
-        String url = BASE_URI_RESTAPI + "/events./?_type=json";
+        String url = RESTAPI_BASE_URI + "/events./?" + RESTAPI_RESPONSE_TYPE;
 
         Event[] eventsFromHippo = restTemplate.getForObject(url, Event[].class);
 
