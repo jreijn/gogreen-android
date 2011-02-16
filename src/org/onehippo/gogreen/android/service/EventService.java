@@ -1,6 +1,7 @@
 package org.onehippo.gogreen.android.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.onehippo.gogreen.android.data.Event;
@@ -28,10 +29,7 @@ public class EventService {
         String url = RESTAPI_BASE_URI + "/events./?" + RESTAPI_RESPONSE_TYPE;
 
         Event[] eventsFromHippo = restTemplate.getForObject(url, Event[].class);
-
-        for (Event event : eventsFromHippo) {
-            events.add(event);
-        }
+        events.addAll(Arrays.asList(eventsFromHippo));
 
         return events;
     }
@@ -47,10 +45,7 @@ public class EventService {
         String url = RESTAPI_BASE_URI + "/events./?" + RESTAPI_RESPONSE_TYPE;
 
         Event[] eventsFromHippo = restTemplate.getForObject(url, Event[].class);
-
-        for (Event event : eventsFromHippo) {
-            events.add(event);
-        }
+        events.addAll(Arrays.asList(eventsFromHippo));
 
         return events;
     }
@@ -68,10 +63,7 @@ public class EventService {
         String url = RESTAPI_BASE_URI + "/events./?" + RESTAPI_RESPONSE_TYPE;
 
         Event[] eventsFromHippo = restTemplate.getForObject(url, Event[].class);
-
-        for (Event event : eventsFromHippo) {
-            events.add(event);
-        }
+        events.addAll(Arrays.asList(eventsFromHippo));
 
         return events;
     }

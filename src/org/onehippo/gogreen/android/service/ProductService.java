@@ -1,6 +1,7 @@
 package org.onehippo.gogreen.android.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.onehippo.gogreen.android.data.Product;
@@ -17,9 +18,9 @@ public class ProductService {
     private static final String RESTAPI_RESPONSE_TYPE = "_type=json";
 
     /**
-     * Get all events.
+     * Get all products.
      *
-     * @return a list of {@link org.onehippo.gogreen.android.data.Event} items
+     * @return a list of {@link org.onehippo.gogreen.android.data.Product} items
      */
     public static ArrayList<Product> getAllProductsFromHippo() {
         RestTemplate restTemplate = getRestTemplate();
@@ -29,9 +30,7 @@ public class ProductService {
 
         Product[] productsFromHippo = restTemplate.getForObject(url, Product[].class);
 
-        for (Product product : productsFromHippo) {
-            products.add(product);
-        }
+        products.addAll(Arrays.asList(productsFromHippo));
 
         return products;
     }
