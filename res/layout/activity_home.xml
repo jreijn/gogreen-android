@@ -55,6 +55,7 @@
                 style="@style/HomeButton"
                 android:onClick="onProductsClick"
                 android:text="Products"
+                android:drawableTop="@drawable/home_btn_events"
                 />
 
           </LinearLayout>
