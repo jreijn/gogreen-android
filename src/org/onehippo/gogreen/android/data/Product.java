@@ -11,18 +11,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class Product {
 
     @JsonProperty
-    private String title;
-
-    @JsonProperty
     private String localizedName;
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    public void setTitle(final String title) {
-        this.title = title;
-    }
 
     public String getLocalizedName() {
         return localizedName;

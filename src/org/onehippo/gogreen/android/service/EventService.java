@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.onehippo.gogreen.android.data.Event;
-import org.springframework.http.client.CommonsClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 /**
+ * Service for getting events from a local Hippo Go Green server.
  * @author Jeroen Reijn
  */
 public class EventService {
@@ -75,7 +75,6 @@ public class EventService {
      */
     private static RestTemplate getRestTemplate() {
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.setRequestFactory(new CommonsClientHttpRequestFactory());
         List<HttpMessageConverter<?>> messageConverters = restTemplate.getMessageConverters();
         if (!messageConverters.contains(MappingJacksonHttpMessageConverter.class)) {
             messageConverters.add(new MappingJacksonHttpMessageConverter());
