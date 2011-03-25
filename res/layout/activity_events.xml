@@ -8,7 +8,7 @@
 
         <ImageView style="@style/TitleBarLogo"
             android:contentDescription="@string/description_logo"
-            android:src="@drawable/title_logo" />
+            android:src="@drawable/hippo_gogreen_logo" />
 
         <TextView style="@style/TitleBarText" />
 

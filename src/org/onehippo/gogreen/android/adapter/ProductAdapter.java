@@ -1,15 +1,19 @@
 package org.onehippo.gogreen.android.adapter;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 import org.onehippo.gogreen.android.R;
 import org.onehippo.gogreen.android.data.Product;
+import org.onehippo.gogreen.android.utils.ImageUtils;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -37,15 +41,38 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         }
         Product product = items.get(position);
         if (product != null) {
-            addTitleToView(itemView, product);
+            addProductToView(itemView, product);
         }
         return itemView;
     }
 
-    private void addTitleToView(final View itemView, final Product product) {
-        TextView tt = (TextView) itemView.findViewById(R.id.product_title);
-        if (tt != null) {
-            tt.setText(product.getLocalizedName());
+    private void addProductToView(final View itemView, final Product product) {
+        setProductName(itemView, product);
+        setPrice(itemView, product);
+        setImage(itemView, product);
+    }
+
+    private void setProductName(final View itemView, final Product product) {
+        TextView productName = (TextView) itemView.findViewById(R.id.product_title);
+        if (productName != null) {
+            productName.setText(product.getLocalizedName());
+        }
+    }
+
+    private void setImage(final View itemView, final Product product) {
+        ImageView imageView = (ImageView) itemView.findViewById(R.id.product_image);
+        if(imageView!=null) {
+            imageView.setImageBitmap(ImageUtils.fetchImage(product.getSmallThumbnail()));
+        }
+    }
+
+    private void setPrice(final View itemView, final Product product) {
+        TextView price = (TextView) itemView.findViewById(R.id.product_price);
+        if (price != null) {
+            NumberFormat numberFormat = new DecimalFormat("0.00");
+            numberFormat.setParseIntegerOnly(false);
+            double doublePrice = Double.valueOf(product.getPrice());
+            price.setText(""+numberFormat.format(doublePrice));
         }
     }
 }

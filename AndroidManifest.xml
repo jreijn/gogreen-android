@@ -43,6 +43,11 @@
       android:label="Products"/>
 
     <activity
+      android:name=".ui.ProductDetailActivity"
+      android:theme="@style/Theme.GoGreen"
+      android:label="Product"/>
+
+    <activity
       android:name=".ui.TopProductsActivity"
       android:theme="@style/Theme.GoGreen"
       android:label="Top Products"/>

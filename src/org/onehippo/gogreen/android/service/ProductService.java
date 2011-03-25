@@ -10,12 +10,13 @@ import org.springframework.http.converter.json.MappingJacksonHttpMessageConverte
 import org.springframework.web.client.RestTemplate;
 
 /**
+ * Service for fetching product information.
  * @author Jeroen Reijn
  */
 public class ProductService {
 
     private static final String RESTAPI_BASE_URI = "http://www.demo.onehippo.com/restapi";
-    private static final String RESTAPI_RESPONSE_TYPE = "_type=json";
+    private static final String RESTAPI_RESPONSE_TYPE = "?_type=json";
 
     /**
      * Get all products.
@@ -26,13 +27,22 @@ public class ProductService {
         RestTemplate restTemplate = getRestTemplate();
 
         ArrayList<Product> products = new ArrayList<Product>();
-        String url = RESTAPI_BASE_URI + "/topproducts./?" + RESTAPI_RESPONSE_TYPE;
+        String url = RESTAPI_BASE_URI + "/topproducts./" + RESTAPI_RESPONSE_TYPE;
 
         Product[] productsFromHippo = restTemplate.getForObject(url, Product[].class);
-
         products.addAll(Arrays.asList(productsFromHippo));
 
         return products;
+    }
+
+    /**
+     * Get the product by its URL
+     * @param url the URL of the product
+     * @return the {@link Product}
+     */
+    public static Product getProductByURL(String url) {
+        RestTemplate restTemplate = getRestTemplate();
+        return restTemplate.getForObject(url+RESTAPI_RESPONSE_TYPE,Product.class);
     }
 
     /**

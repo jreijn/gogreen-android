@@ -1,65 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/home_root"
+              android:id="@+id/home_root"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+  <!-- title bar with search and refresh -->
+  <LinearLayout style="@style/TitleBar">
+    <ImageView style="@style/TitleBarLogo"
+               android:contentDescription="@string/description_logo"
+               android:src="@drawable/hippo_gogreen_logo"
+      />
+
+    <View style="@style/TitleBarSpring"/>
+
+    <ImageView style="@style/TitleBarSeparator"/>
+    <ImageButton style="@style/TitleBarAction"
+                 android:contentDescription="@string/description_search"
+                 android:src="@drawable/ic_title_search"
+                 android:onClick="onSearchClick"/>
+  </LinearLayout>
+
+  <!-- Content column with menu icons -->
+  <LinearLayout
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:padding="6dip">
 
-    <!-- title bar with search and refresh -->
-    <LinearLayout style="@style/TitleBar">
-        <ImageView style="@style/TitleBarLogo"
-            android:contentDescription="@string/description_logo"
-            android:src="@drawable/title_logo" />
-
-        <View style="@style/TitleBarSpring" />
-
-        <ImageView style="@style/TitleBarSeparator" />
-<!--
-        <ImageButton style="@style/TitleBarAction"
-            android:id="@+id/btn_title_refresh"
-            android:contentDescription="@string/description_refresh"
-            android:src="@drawable/ic_title_refresh"
-            android:onClick="onRefreshClick" />
-
-        <ProgressBar style="@style/TitleBarProgressIndicator"
-            android:id="@+id/title_refresh_progress"
-            android:visibility="gone" />
-
-        <ImageView style="@style/TitleBarSeparator" />
--->
-      <ImageButton style="@style/TitleBarAction"
-            android:contentDescription="@string/description_search"
-            android:src="@drawable/ic_title_search"
-            android:onClick="onSearchClick" />
-    </LinearLayout>
-
-    <!-- Content column with menu icons -->
     <LinearLayout
-      android:orientation="vertical"
+      android:orientation="horizontal"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:padding="6dip">
-          <LinearLayout
-              android:orientation="horizontal"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:layout_weight="1">
-              <Button android:id="@+id/home_btn_events"
-                  style="@style/HomeButton"
-                  android:onClick="onEventsClick"
-                  android:text="@string/btn_events"
-                  android:drawableTop="@drawable/home_btn_events"/>
+      android:layout_weight="1">
 
-            <Button android:id="@+id/home_btn_products"
-                style="@style/HomeButton"
-                android:onClick="onProductsClick"
-                android:text="Products"
-                android:drawableTop="@drawable/home_btn_events"
-                />
+      <Button android:id="@+id/home_btn_products"
+              style="@style/HomeButton"
+              android:onClick="onProductsClick"
+              android:text="Products"
+              android:drawableTop="@drawable/home_btn_events"
+        />
 
-          </LinearLayout>
+    </LinearLayout>
 
-      </LinearLayout>
+  </LinearLayout>
 
 </LinearLayout>

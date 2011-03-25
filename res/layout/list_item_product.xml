@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list_item_product"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    style="@style/ListItem">
+                android:id="@+id/list_item_product"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/ListItem">
 
-    <TextView
-        android:gravity="left"
-        android:id="@+id/product_title"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignWithParentIfMissing="true"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        style="@style/EventTitle" />
+  <ImageView
+    android:id="@+id/product_image"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:adjustViewBounds="true"
+    android:cropToPadding="true"
+    android:scaleType="centerCrop"
+    />
+
+  <TextView
+    android:id="@+id/product_title"
+    android:layout_alignParentTop="true"
+    android:layout_alignWithParentIfMissing="true"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/product_image"
+    style="@style/ProductTitle"/>
+
+  <TextView
+    android:id="@+id/product_price"
+    android:layout_below="@+id/product_title"
+    android:layout_alignParentBottom="true"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dip"
+    android:layout_toRightOf="@+id/product_image"
+    style="@style/ProductPrice"
+    />
+
 </RelativeLayout>

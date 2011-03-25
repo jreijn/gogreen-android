@@ -10,9 +10,11 @@ import org.onehippo.gogreen.android.utils.UIUtils;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
 
 /**
  * @author Jeroen Reijn
@@ -53,6 +55,14 @@ public class ProductsActivity extends ListActivity {
             Log.e("BACKGROUND_PROC", e.getMessage());
         }
         runOnUiThread(returnRes);
+    }
+
+    @Override
+    protected void onListItemClick(final ListView l, final View v, final int position, final long id) {
+        Product product = (Product) l.getItemAtPosition(position);
+        Product.selected = product;
+        Intent intent = new Intent(this,ProductDetailActivity.class);
+        startActivity(intent);
     }
 
     private Runnable returnRes = new Runnable() {
