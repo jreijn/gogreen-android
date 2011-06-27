@@ -8,6 +8,7 @@ import org.onehippo.gogreen.android.utils.ImageUtils;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,10 +35,12 @@ public class ProductDetailActivity extends Activity {
 		TextView nameView = (TextView) findViewById(R.id.product_name);
         nameView.setText(product.getLocalizedName());
         ImageView imageView = (ImageView) findViewById(R.id.product_image);
-        imageView.setImageBitmap(ImageUtils.fetchImage(product.getImage()));
+        imageView.setImageBitmap(ImageUtils.fetchImage(product.getSmallThumbnail()));
 
         TextView descriptionView = (TextView) findViewById(R.id.product_description);
+        descriptionView.setMovementMethod(new ScrollingMovementMethod());
         descriptionView.setText(Html.fromHtml(product.getDescription()));
+        descriptionView.setVerticalScrollBarEnabled(true);
 	}
 
 	@Override

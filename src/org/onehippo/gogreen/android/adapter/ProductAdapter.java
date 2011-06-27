@@ -72,7 +72,7 @@ public class ProductAdapter extends ArrayAdapter<Product> {
             NumberFormat numberFormat = new DecimalFormat("0.00");
             numberFormat.setParseIntegerOnly(false);
             double doublePrice = Double.valueOf(product.getPrice());
-            price.setText(""+numberFormat.format(doublePrice));
+            price.setText("€ "+numberFormat.format(doublePrice));
         }
     }
 }

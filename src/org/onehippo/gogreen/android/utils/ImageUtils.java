@@ -11,10 +11,16 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 
 /**
+ * Utility class for images
  * @author Jeroen Reijn
  */
 public class ImageUtils {
 
+    /**
+     * Fetches an external image and decodes the stream as a {@link Bitmap}
+     * @param urlstr the url of the external image
+     * @return {@link Bitmap} containing the external image
+     */
     public static Bitmap fetchImage(String urlstr )
     {
         try
