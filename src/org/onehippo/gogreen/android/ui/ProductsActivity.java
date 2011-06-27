@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.ListView;
 
 /**
+ * Products activity for displaying a list of products
  * @author Jeroen Reijn
  */
 public class ProductsActivity extends ListActivity {
@@ -47,6 +48,9 @@ public class ProductsActivity extends ListActivity {
                 "Please wait...", "Retrieving data ...", true);
     }
 
+    /**
+     * Get the products
+     */
     private void getProducts() {
         try {
             products = ProductService.getAllProductsFromHippo();

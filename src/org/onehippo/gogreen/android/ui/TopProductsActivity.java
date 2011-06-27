@@ -14,7 +14,7 @@ import android.util.Log;
 import android.view.View;
 
 /**
- * Activity for the events screen
+ * Activity for the top products screen
  * 
  * @author Jeroen Reijn
  */
